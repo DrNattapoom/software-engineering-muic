@@ -23,8 +23,8 @@ args:
 def print_stat(data):
     if (not data):
         print('[ERROR]: data list is empty')
-        return
-    print(f'mean: {np.mean(data)} std: {np.std(data)} min: {np.min(data)} max {np.max(data)} n: {len(data)}')
+    else:
+        print(f'mean: {np.mean(data)} std: {np.std(data)} min: {np.min(data)} max {np.max(data)} n: {len(data)}')
 
 """
 put everything together and start the program
@@ -48,5 +48,6 @@ def main():
         except Exception as e:
             print('[ERROR]:', e)
 
+# python stat.py data_1.txt data_2.txt
 if __name__ == '__main__':
     main()
