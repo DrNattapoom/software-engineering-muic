@@ -24,11 +24,7 @@ def print_stat(data):
     if (not data):
         print('[ERROR]: data list is empty')
         return
-    print('Statistics Summary')
-    print('mean:', np.mean(data))
-    print('std:', np.std(data))
-    print('min:', np.min(data))
-    print('max:', np.max(data))
+    print(f'mean: {np.mean(data)} std: {np.std(data)} min: {np.min(data)} max {np.max(data)} n: {len(data)}')
 
 """
 put everything together and start the program
@@ -41,9 +37,14 @@ def main():
         print('[ERROR]: please enter a file name')
     else:
         try:
+            combined = []
             for file in files:
                 data = get_data(file)
+                print(file)
                 print_stat(data)
+                combined += data
+            print('combined')
+            print_stat(combined)
         except Exception as e:
             print('[ERROR]:', e)
 
